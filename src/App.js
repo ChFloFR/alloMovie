@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
-import Item from "./src/component/Item";
+import Item from "./component/Item";
 
 function App() {
   const [data, setData] = useState([]);
@@ -20,9 +20,20 @@ function App() {
     // console.log(mounted);
   }, []);
 
+  // INPUT
+  const [inputData, setInputData] = useState();
+  // e est l'évènement à l'input
+  const changeInput = (e) => {
+    setInputData(e);
+  };
   return (
     <div className="App">
       <h1 className="titre-app">Hello depuis App : {/*monState*/}</h1>
+      <input 
+        type="text"
+        value={inputData} 
+        onInput={(e) => changeInput(e.target.value)} 
+        />
       <Fragment>
         <ul>
           {data.map((item) => (
@@ -32,11 +43,11 @@ function App() {
           ))}
         </ul>
       </Fragment>
-{/*
+      {/*
       <Item func={modifyState} />
           */}
     </div>
   );
 }
 
-export default 'App.js';
+export default App;
