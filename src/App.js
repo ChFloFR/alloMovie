@@ -10,11 +10,11 @@ function App() {
     // on lance la fonction pour aller chercher les datas
     const fetchData = async () => {
       const result = await axios(
-        "https://api.themoviedb.org/3/movie/550?api_key=ab7b3a0007914779b57efa24bb03a284"
+        "https://api.themoviedb.org/3/movie/popular?api_key{ab7b3a0007914779b57efa24bb03a284}"
       );
       // on range les données ici
-      setData(result.data);
-      // console.log(updated);
+      // setData(result.data);
+      console.log(result);
     };
     fetchData();
     // console.log(mounted);
@@ -29,11 +29,11 @@ function App() {
   return (
     <div className="App">
       <h1 className="titre-app">Hello depuis App : {/*monState*/}</h1>
-      <input 
+      <input
         type="text"
-        value={inputData} 
-        onInput={(e) => changeInput(e.target.value)} 
-        />
+        value={inputData}
+        onInput={(e) => changeInput(e.target.value)}
+      />
       <Fragment>
         <ul>
           {data.map((item) => (
