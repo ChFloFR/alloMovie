@@ -1,0 +1,18 @@
+fetch(url)
+    .then((res)=>res.json())
+    .then(data=>{
+      console.log(data);
+      setMoviesList(data.results);
+fetch(url)
+    .then((res)=>res.json())
+    .then(data=>{
+      console.log(data);
+      setMoviesList(data.results);
+      setTotalPages(data.total_pages);
+      // console.log(totalPages);
+    })
+    setPageCount(Math.ceil(moviesList.length / moviesPerPage));
+  }, [moviesPerPage, currentPage, isSearching,totalPages]);
+  // console.log(moviesList);
+
+  code pagination

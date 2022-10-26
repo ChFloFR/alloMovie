@@ -1,16 +1,15 @@
 import React from "react";
-import Films from "./Films";
-import Loading from "../components/Loading";
-import { useGlobalContext } from "./context";
+import Films from "./Film";
+// import { useGlobalContext } from "./context";
 
 const FilmList = () => {
-  const { films, loading } = useGlobalContext();
+  // const { films, loading } = useGlobalContext();
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
-  if (films.length < 1) {
+  if (Films.length < 1) {
     return <h2 className="section-title">Pas de film correspondant trouvé</h2>;
   }
 
@@ -18,7 +17,7 @@ const FilmList = () => {
     <section className="section">
       <h2 className="sectionTitle">Liste des films</h2>
       <div className="films-center">
-        {films.map((item) => {
+        {Films.map((item) => {
           console.log(item);
           return <Films key={item.id} {...item} />;
         })}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Films = ({ name, info, id, actor, type }) => {
+const Films = ({ name, image, info, id, actor, type }) => {
   return (
     <article className="film-section">
       <Link to="/" className="btn btn-primary">
