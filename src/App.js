@@ -1,6 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
-import Item from "./component/Item";
+import Index from "./Index";
+import Film from "./pages/Film";
+import FilmList from "./pages/FilmList";
+import SingleFilm from "./pages/SingleFilm";
 
 function App() {
   const [data, setData] = useState([]);
